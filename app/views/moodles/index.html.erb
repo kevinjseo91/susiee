@@ -1,0 +1,25 @@
+<h1>Listing moodles</h1>
+
+<table>
+  <tr>
+    <th>Content</th>
+    <th>User</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @moodles.each do |moodle| %>
+  <tr>
+    <td><%= moodle.content %></td>
+    <td><%= moodle.user_id %></td>
+    <td><%= link_to 'Show', moodle %></td>
+    <td><%= link_to 'Edit', edit_moodle_path(moodle) %></td>
+    <td><%= link_to 'Destroy', moodle, confirm: 'Are you sure?', method: :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Moodle', new_moodle_path %>
